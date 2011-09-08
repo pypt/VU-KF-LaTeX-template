@@ -79,6 +79,6 @@ Nes:
 [4]: http://ims.mii.lt/~lauras/latexlt/ "VU MIF LaTeX šablonas"
 [5]: http://www.vtex.lt/tex/littex/index.html "„VTEX“ *LaTeX* lituanizacija"
 [6]: http://en.wikibooks.org/wiki/LaTeX "LaTeX @ WikiBooks"
-[7]: linas.valiukas@kf.stud.vu.lt "Linas Valiukas"
+[7]: mailto:linas.valiukas@kf.stud.vu.lt "Linas Valiukas"
 [8]: http://en.wikipedia.org/wiki/LaTeX "LaTeX @ Wikipedia"
 [9]: http://en.wikipedia.org/wiki/BibTeX "BibTeX @ Wikipedia"
