@@ -1,3 +1,5 @@
+![LaTeX komfage](http://i.imgur.com/M30dR.png "LaTeX komfake")
+
 Čia yra **neoficialus *LaTeX* šablonas** Vilniaus universiteto Komunikacijos fakulteto rašto darbams rengti.
 
 This is an **unofficial *LaTeX* template** for preparing Vilnius university Faculty of Communication course work.
