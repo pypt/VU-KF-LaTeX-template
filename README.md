@@ -59,6 +59,8 @@ Nes:
 * Referato puslapyje nesuskaičiuojamas priedų puslapių skaičius.
 * Turinio kūrimas galėtų būti patobulintas (pirmo lygio skyrių pavadinimai didžiosiomis raidėmis, numerių lygiavimas ir kt.)
 * Turinyje „nepasispaudžia“ nuoroda „Bibliografinių nuorodų sąrašas“
+* Išplėsti darbų pasirinkimą - pridėti referatą, praktikos ataskaitą, bakalaurinį, magistrinį ir pan.
+* Įvykdyti *peer review* ;-)
 
 # Šaltiniai ir nuorodos
 
