@@ -1,4 +1,4 @@
-![LaTeX komfage](http://i.imgur.com/M30dR.png "LaTeX komfake")
+![LaTeX komfake](http://i.imgur.com/M30dR.png "LaTeX komfake")
 
 Čia yra **neoficialus *LaTeX* šablonas** Vilniaus universiteto Komunikacijos fakulteto rašto darbams rengti.
 
