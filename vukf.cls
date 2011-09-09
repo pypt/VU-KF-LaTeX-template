@@ -11,6 +11,9 @@
 % FIXME referato puslapis (ypač skaičiai)
 % FIXME turinys (taškas po numerio, uppercase)
 % FIXME "Bibliografinių nuorodų sąrašas" nepasispaudžia
+% FIXME įvairiose vietose gale padėti tašką, jeigu nepadėtas
+% FIXME prieš footnote/citatą ištrinti tarpą, jeigu jis ten padėtas (arba vice versa)
+% FIXME "normalus" lentelių package'as
 
 \LoadClass[12pt,a4paper,oneside]{article}
 \special{papersize=210mm,297mm}
