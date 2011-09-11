@@ -20,7 +20,6 @@
 \usepackage[top=2cm, bottom=2cm, left=3cm, right=1cm, paper=a4paper, layout=a4paper]{geometry}
 
 \RequirePackage[lithuanian]{babel}
-\RequirePackage[L7x]{fontenc}
 \RequirePackage[utf8]{inputenc}
 
 % Times New Roman, kai naudojamas XeTeX
@@ -32,6 +31,7 @@
 \else
 	\RequirePackage{pslatex}				% Times
 	\RequirePackage{times}
+	\RequirePackage[L7x]{fontenc}
 \fi
 
 \RequirePackage{url}
@@ -239,9 +239,7 @@
   
 		\begin{center}
 		{
-			Vilniaus universiteto \\
-			Komunikacijos fakulteto \\
-			\@vukfDivision\par
+			Vilniaus universiteto \\Komunikacijos fakulteto \\\@vukfDivision\par
 		}
 		\end{center}
 		
@@ -372,7 +370,7 @@
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\@title: \MakeLowercase\@vukfType / \@author; mokslinis vadovas \@vukfSupervisor; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. – Vilnius, \the\year. – \pageref{LastPage} [0] lap.: lent. – Mašinr. – Santr. angl. – Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).
 	\\\\
-	\textbf{Reikšminiai žodžiai:} \@vukfKeywords
+	\textbf{Reikšminiai žodžiai:} \@vukfKeywords.
 	\\
 }{
 	% After
@@ -390,7 +388,7 @@
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\@vukfTitleEn: \MakeLowercase\@vukfTypeEn / \@author; research director \@vukfSupervisor; Vilnius university. Faculty of communication. \@vukfDivisionEn. – Vilnius, \the\year. – \pageref{LastPage} [0] lap.: lent. – Mašinr. – Santr. angl. – Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).
 	\\\\
-	\textbf{Keywords:} \@vukfKeywords
+	\textbf{Keywords:} \@vukfKeywords.
 	\\
 }{
 	% After
