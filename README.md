@@ -54,7 +54,6 @@ Nes:
 
 # Klaidos / FIXME / TODO
 
-* Keista klaida `Latex Error: abc.tex:2 Missing = inserted for \ifnum.` (bet PDF byla vis tiek sukuriama)
 * „Lietuviškos“ kabutės galėtų būti rašomos patogiau.
 	* Šiuo metu geriausia rašyti du kablelius (`,,`), dvi viengubas kabutes (`''`) ir galiausiai panaudoti *Find and Replace* ;-)
 * Baigti realizuoti *BibTeX* stilių.

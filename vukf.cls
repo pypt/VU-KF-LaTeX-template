@@ -3,8 +3,8 @@
 %
 % Requires XeTeX (because of the Times New Roman font)
 %
-\NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{vukf}[2011-08-26 v1.0 Komunikacijos fakultetas]
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{vukf}[2011/08/26 v1.0 Komunikacijos fakultetas]
 
 % FIXME kabutės
 % FIXME bibliografinės nuorodos
@@ -19,8 +19,20 @@
 \special{papersize=210mm,297mm}
 \usepackage[top=2cm, bottom=2cm, left=3cm, right=1cm, paper=a4paper, layout=a4paper]{geometry}
 
-\RequirePackage[utf8]{inputenc}
 \RequirePackage[lithuanian]{babel}
+\RequirePackage[L7x]{fontenc}
+\RequirePackage[utf8]{inputenc}
+
+% Times New Roman, kai naudojamas XeTeX
+\RequirePackage{ifxetex}
+\ifxetex
+	\RequirePackage{fontspec}
+	\defaultfontfeatures{Mapping=tex-text}	% Ilgas brūkšnys
+	\setmainfont{Times New Roman}			% Times New Roman
+\else
+	\RequirePackage{pslatex}				% Times
+	\RequirePackage{times}
+\fi
 
 \RequirePackage{url}
 \urlstyle{same}
@@ -43,12 +55,8 @@
 % kableliu, po jo standartiškai dedamas tarpelis nepageidaujamas
 \RequirePackage{icomma}
 
-\RequirePackage{pslatex}
 \RequirePackage{lastpage}
 \RequirePackage{hyperref}
-\RequirePackage{fontspec}
-\defaultfontfeatures{Mapping=tex-text}	% Ilgas brūkšnys
-\setmainfont{Times New Roman}
 
 % Puslapio numeris dešinėje
 \RequirePackage{fancyhdr}
@@ -319,13 +327,13 @@
 \setlength{\cftsubsubsecindent}{0em}
 \setlength{\cftsubsubsecnumwidth}{3em}
 
-\setlength{\cftbeforeparasecskip}{0em}
-\setlength{\cftparasecindent}{0em}
-\setlength{\cftparasecnumwidth}{3em}
+\setlength{\cftbeforeparaskip}{0em}
+\setlength{\cftparaindent}{0em}
+\setlength{\cftparanumwidth}{3em}
 
-\setlength{\cftbeforesubparasecskip}{0em}
-\setlength{\cftsubparasecindent}{0em}
-\setlength{\cftsubparasecnumwidth}{3em}
+\setlength{\cftbeforesubparaskip}{0em}
+\setlength{\cftsubparaindent}{0em}
+\setlength{\cftsubparanumwidth}{3em}
 
 
 \renewcommand\tableofcontents{
