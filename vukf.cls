@@ -368,10 +368,13 @@
 	
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
-	\@title: \MakeLowercase\@vukfType / \@author; mokslinis vadovas \@vukfSupervisor; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. – Vilnius, \the\year. – \pageref{LastPage} [0] lap.: lent. – Mašinr. – Santr. angl. – Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).
-	\\\\
-	\textbf{Reikšminiai žodžiai:} \@vukfKeywords.
-	\\
+	\addtolength{\leftskip}{1cm}
+	\@title : \MakeLowercase\@vukfType / \@author ; mokslinis vadovas \@vukfSupervisor ; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] lap. : lent. -- Mašinr. -- Santr. angl. -- Bibliogr.: lap. \pageref{bibliographyStart}--\pageref{bibliographyEnd} (43 pavad.).\\
+	
+	\addtolength{\leftskip}{-1cm}
+	\setlength{\parindent}{0cm}
+	\textbf{Reikšminiai žodžiai:} \@vukfKeywords.\\
+	\setlength{\parindent}{1cm}
 }{
 	% After
 	\pagebreak
@@ -380,16 +383,19 @@
 
 % Referato lapas anglų kalba
 \newenvironment{vukfAbstractEn}
-{
+{	
 	% Before
 	\textbf{\@vukfAuthorLastName, \@vukfAuthorFirstName}
 
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
-	\@vukfTitleEn: \MakeLowercase\@vukfTypeEn / \@author; research director \@vukfSupervisor; Vilnius university. Faculty of communication. \@vukfDivisionEn. – Vilnius, \the\year. – \pageref{LastPage} [0] lap.: lent. – Mašinr. – Santr. angl. – Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).
-	\\\\
-	\textbf{Keywords:} \@vukfKeywords.
-	\\
+	\addtolength{\leftskip}{1cm}
+	\@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] p. : lent. -- Mašinr. -- Santr. angl. -- Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).\\
+
+	\addtolength{\leftskip}{-1cm}
+	\setlength{\parindent}{0cm}
+	\textbf{Keywords:} \@vukfKeywordsEn.\\
+	\setlength{\parindent}{1cm}
 }{
 	% After
 	\pagebreak
