@@ -131,13 +131,15 @@
 }
 
 % Baigiamasis bakalauro darbas
-\DeclareOption{baigiamasis-bakalauro-darbas}{
-	\typeout{}
+\DeclareOption{bakalauro-baigiamasis-darbas}{
+	\def\@vukfType{Bakalauro baigiamasis darbas}
+	\def\@vukfTypeEn{Study}	% FIXME
 }
 
 % Baigiamasis magistro darbas
-\DeclareOption{baigiamasis-magistro-darbas}{
-	\typeout{}
+\DeclareOption{magistro-baigiamasis-darbas}{
+	\def\@vukfType{Magistro baigiamasis darbas}
+	\def\@vukfType{Study}	% FIXME
 }
 
 \ProcessOptions\relax
@@ -301,6 +303,69 @@
 	\setcounter{footnote}{0}
 
 	\pagebreak
+}
+
+
+% ---------------------
+
+%
+% Lydraštis
+%
+
+\newcommand{\makeVuKfCoverLetter}{
+	\begin{tabular}{ | p{15cm} | }
+		\hline
+		\emph{Pildo bakalauro / magistro baigiamojo darbo autorius} \\ \hline
+
+		\@author \\
+		\tiny{(bakalauro / magistro baigiamojo darbo autoriaus vardas, pavardė)} \\
+		\\
+		\@title \\
+		\tiny{(bakalauro / magistro baigiamojo darbo pavadinimas lietuvių kalba)} \\
+		\\
+		\@vukfTitleEn \\
+		\tiny{(bakalauro / magistro baigiamojo darbo pavadinimas anglų kalba)} \\ \hline
+		
+		\textbf{Patvirtinu, kad bakalauro / magistro baigiamasis darbas parašytas savarankiškai, nepažeidžiant kitiems asmenims priklausančių autorių teisių, visas baigiamasis bakalauro / magistro darbas ar jo dalis nebuvo panaudoti kitose aukštosiose mokyklose.} \\
+		\rule{1cm}{0.4pt} \\
+		\tiny{(bakalauro / magistro baigiamojo darbo autoriaus parašas)} \\ \hline
+		
+		\textbf{Sutinku, kad bakalauro / magistro baigiamasis darbas būtų naudojamas neatlygintinai 5 metus Vilniaus universiteto Komunikacijos fakulteto studijų procese.} \\
+		\rule{1cm}{0.4pt} \\
+		\tiny{(bakalauro / magistro baigiamojo darbo autoriaus parašas)} \\ \hline
+		
+		\emph{Pildo bakalauro / magistro baigiamojo darbo vadovas} \\ \hline
+		
+		\textbf{Bakalauro / magistro baigiamąjį darbą ginti} \rule{1cm}{0.4pt} \\
+		\tiny{(įrašyti – leidžiu arba neleidžiu)} \\
+		\\
+		\rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
+		\tiny{(data)} \tiny{(bakalauro / magistro baigiamojo darbo vadovo parašas)} \\ \hline
+		
+		\emph{Pildo instituto / katedros, kuruojančios studijų programą, reikalų tvarkytoja} \\ \hline
+		
+		\textbf{Bakalauro / magistro baigiamasis darbas įregistruotas} \\
+		\rule{1cm}{0.4pt} \\
+		(instituto / katedros, kuruojančios studijų programą, pavadinimas) \\
+		\rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
+		\tiny{(data)} \tiny{(instituto / katedros reikalų tvarkytojos parašas)} \\ \hline
+		
+		\emph{Pildo instituto / katedros, kuruojančios studijų programą, vadovas} \\ \hline
+		
+		\textbf{Recenzentu skiriu} \rule{1cm}{0.4pt} \\
+		\tiny{(recenzento vardas, pavardė)} \\
+		\rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
+		\tiny{(data)} \tiny{(instituto / katedros vadovo parašas)} \\ \hline
+		
+		\emph{Pildo recenzentas} \\ \hline
+		
+		\textbf{Darbą recenzuoti gavau.} \rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
+		\tiny{(data)} \tiny{(recenzento parašas)} \\ \hline
+		
+	\end{tabular}
+
+	\pagebreak
+	\newpage
 }
 
 
