@@ -33,6 +33,9 @@
 % FIXME įvairiose vietose gale padėti tašką, jeigu nepadėtas
 % FIXME prieš footnote/citatą ištrinti tarpą, jeigu jis ten padėtas (arba vice versa)
 % FIXME "normalus" lentelių package'as
+% FIXME \appendix
+% FIXME "booktabs" lentelėms
+% FIXME išsiaiškinti su "natbib" (http://win.ua.ac.be/~nschloe/content/top-10-latex-modules)
 
 \LoadClass[12pt,a4paper,oneside]{article}
 \special{papersize=210mm,297mm}
@@ -48,8 +51,19 @@
 	\defaultfontfeatures{Mapping=tex-text}	% Ilgas brūkšnys
 	\setmainfont{Times New Roman}			% Times New Roman
 \else
+
+	% FIXME replace with:
+	% \usepackage{mathptmx}
+	% \usepackage[scaled=.90]{helvet}
+	% \usepackage{courier}
 	\RequirePackage{pslatex}				% Times
+	
+	% FIXME replace with:
+	% \usepackage{mathptmx}
+	% \usepackage[scaled=.90]{helvet}
+	% \usepackage{courier}
 	\RequirePackage{times}
+	
 	\RequirePackage[L7x]{fontenc}
 \fi
 
@@ -65,6 +79,9 @@
 
 % Pirma eilutė irgi indentuojama
 \RequirePackage{indentfirst}
+
+% "Subtiliai pagražina" rezultatą
+\RequirePackage{microtype}
 
 % Glosarijus
 \RequirePackage[toc,xindy]{glossaries}
@@ -177,6 +194,12 @@
 
 % Darbo vadovas (pvz. "lekt. Dž. Paršonis")
 \newcommand{\vukfSupervisor}[1]{\def\@vukfSupervisor{#1}}
+
+% Autoriaus ženklas - tik baigiamuosiuose darbuose (pvz. "Va 001")
+\newcommand{\vukfAuthorSign}[1]{\def\@vukfAuthorSign{#1}}
+
+% UDK indeksas - tik baigiamuosiuose darbuose (pvz. "659.1:663/664")
+\newcommand{\vukfUDK}[1]{\def\@vukfUDK{#1}}
 
 
 % ---------------------
