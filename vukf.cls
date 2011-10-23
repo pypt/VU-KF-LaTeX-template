@@ -67,7 +67,8 @@
 	\RequirePackage[L7x]{fontenc}
 \fi
 
-\RequirePackage{url}
+% URL'ai
+\RequirePackage[hyphens]{url}
 \urlstyle{same}
 
 % 1,5 tarpas tarp eilučių
@@ -92,7 +93,7 @@
 \RequirePackage{icomma}
 
 \RequirePackage{lastpage}
-\RequirePackage{hyperref}
+\RequirePackage[breaklinks]{hyperref}
 
 % Puslapio numeris dešinėje
 \RequirePackage{fancyhdr}
@@ -126,14 +127,19 @@
 	\def\@vukfTypeEn{Project report}
 }
 
-% Žurnalistinio žanro kūrinys
+% Žurnalistinio žanro kūrinys (žurfakas)
 \DeclareOption{zurnalistinis-kurinys}{
-	\typeout{}
+	\def\@vukfType{Žurnalistinis kūrinys}
 }
 
 % Praktikos ataskaita
 \DeclareOption{praktikos-ataskaita}{
-	\typeout{}
+	\def\@vukfType{Praktikos ataskaita}
+}
+
+% Individualios užduoties ataskaita (žurfakas)
+\DeclareOption{individualios-uzduoties-ataskaita}{
+	\def\@vukfType{Individualios užduoties ataskaita}
 }
 
 % Kursinis darbas
