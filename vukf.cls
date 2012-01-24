@@ -153,7 +153,13 @@
 	\typeout{}
 }
 
-% Baigiamasis bakalauro darbas
+% Bakalauro baigiamojo darbo kūrybinė dalis (žurfakas)
+\DeclareOption{bakalauro-baigiamojo-darbo-kurybine-dalis}{
+	\def\@vukfType{Bakalauro baigiamojo darbo kūrybinė dalis}
+	\def\@vukfTypeEn{Final bachelor degree work}
+}
+
+% Bakalauro baigiamasis darbas
 \DeclareOption{bakalauro-baigiamasis-darbas}{
 	\def\@vukfType{Bakalauro baigiamasis darbas}
 	\def\@vukfTypeEn{Study}	% FIXME
@@ -342,56 +348,85 @@
 %
 
 \newcommand{\makeVuKfCoverLetter}{
+	\setlength{\parindent}{0cm}
 	\begin{tabular}{ | p{15cm} | }
 		\hline
-		\emph{Pildo bakalauro / magistro baigiamojo darbo autorius} \\ \hline
-
-		\@author \\
-		\tiny{(bakalauro / magistro baigiamojo darbo autoriaus vardas, pavardė)} \\
+		\emph{Pildo bakalauro baigiamojo darbo kūrybinės dalies autorius} \\ \hline
+		\@author \\[-10pt]
+		
+		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies autoriaus vardas, pavardė)} \\
 		\\
-		\@title \\
-		\tiny{(bakalauro / magistro baigiamojo darbo pavadinimas lietuvių kalba)} \\
+		\@title \\[-10pt]
+		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies pavadinimas lietuvių kalba)} \\
 		\\
-		\@vukfTitleEn \\
-		\tiny{(bakalauro / magistro baigiamojo darbo pavadinimas anglų kalba)} \\ \hline
+		\@vukfTitleEn \\[-10pt]
+		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies pavadinimas anglų kalba)} \\
+		\hline
 		
-		\textbf{Patvirtinu, kad bakalauro / magistro baigiamasis darbas parašytas savarankiškai, nepažeidžiant kitiems asmenims priklausančių autorių teisių, visas baigiamasis bakalauro / magistro darbas ar jo dalis nebuvo panaudoti kitose aukštosiose mokyklose.} \\
-		\rule{1cm}{0.4pt} \\
-		\tiny{(bakalauro / magistro baigiamojo darbo autoriaus parašas)} \\ \hline
+		\textbf{Patvirtinu, kad bakalauro baigiamojo darbo kūrybinė dalis parengta savarankiškai, nepažeidžiant kitiems asmenims priklausančių autorių teisių, visas darbas ar jo dalis nebuvo panaudota kitose aukštosiose mokyklose.} \\
+		\hrulefill \\[-10pt]
+		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies autoriaus parašas)} \\ \hline
 		
-		\textbf{Sutinku, kad bakalauro / magistro baigiamasis darbas būtų naudojamas neatlygintinai 5 metus Vilniaus universiteto Komunikacijos fakulteto studijų procese.} \\
-		\rule{1cm}{0.4pt} \\
-		\tiny{(bakalauro / magistro baigiamojo darbo autoriaus parašas)} \\ \hline
+		\textbf{Sutinku, kad bakalauro baigiamojo darbo kūrybinė dalis būtų naudojama neatlygintinai 5 metus Vilniaus universiteto Komunikacijos fakulteto studijų procese.} \\
+		\hrulefill \\[-10pt]
+		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies autoriaus parašas)} \\ \hline
 		
-		\emph{Pildo bakalauro / magistro baigiamojo darbo vadovas} \\ \hline
+		\emph{Pildo bakalauro baigiamojo darbo kūrybinės dalies vadovas} \\ \hline
 		
-		\textbf{Bakalauro / magistro baigiamąjį darbą ginti} \rule{1cm}{0.4pt} \\
-		\tiny{(įrašyti – leidžiu arba neleidžiu)} \\
-		\\
-		\rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
-		\tiny{(data)} \tiny{(bakalauro / magistro baigiamojo darbo vadovo parašas)} \\ \hline
+		\begin{tabular}{ l l }
+			\textbf{Bakalauro baigiamojo darbo kūrybinę dalį ginti} & \hrulefill \\[-10pt]
+			& \tiny{(įrašyti – leidžiu arba neleidžiu)} \\
+		\end{tabular}
 		
-		\emph{Pildo instituto / katedros, kuruojančios studijų programą, reikalų tvarkytoja} \\ \hline
+		\begin{tabular}{ l l }
+			\rule{3cm}{0.4pt} & \hrulefill \\[-10pt]
+			\tiny{(data)} & \tiny{(bakalauro baigiamojo darbo kūrybinės dalies vadovo parašas)} \\
+		\end{tabular}
 		
-		\textbf{Bakalauro / magistro baigiamasis darbas įregistruotas} \\
-		\rule{1cm}{0.4pt} \\
-		(instituto / katedros, kuruojančios studijų programą, pavadinimas) \\
-		\rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
-		\tiny{(data)} \tiny{(instituto / katedros reikalų tvarkytojos parašas)} \\ \hline
+		\\ \hline
+		
+		\emph{Pildo instituto / katedros, kuruojančios studijų programą, specialistė} \\ \hline
+		
+		\textbf{Bakalauro baigiamojo darbo kūrybinė dalis įregistruota} \\
+		\hrulefill \\[-10pt]
+		\tiny{(instituto / katedros, kuruojančios studijų programą, pavadinimas)} \\
+		
+		\begin{tabular}{ l l }
+			\rule{3cm}{0.4pt} & \hrulefill \\[-10pt]
+			\tiny{(data)} & \tiny{(instituto/  katedros specialistės parašas)} \\
+		\end{tabular}
+		
+		\\ \hline
 		
 		\emph{Pildo instituto / katedros, kuruojančios studijų programą, vadovas} \\ \hline
 		
-		\textbf{Recenzentu skiriu} \rule{1cm}{0.4pt} \\
-		\tiny{(recenzento vardas, pavardė)} \\
-		\rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
-		\tiny{(data)} \tiny{(instituto / katedros vadovo parašas)} \\ \hline
+		\begin{tabular}{ l l }
+			\textbf{Recenzentu skiriu} & \rule{7cm}{0.4pt} \\[-10pt]
+			& \tiny{(recenzento vardas, pavardė)} \\
+		\end{tabular}
+		
+		\begin{tabular}{ l l }
+			\rule{3cm}{0.4pt} & \hrulefill \\[-10pt]
+			\tiny{(data)} & \tiny{(instituto / katedros vadovo parašas)} \\
+		\end{tabular}
+		
+		\\ \hline
 		
 		\emph{Pildo recenzentas} \\ \hline
 		
-		\textbf{Darbą recenzuoti gavau.} \rule{1cm}{0.4pt} \rule{1cm}{0.4pt} \\
-		\tiny{(data)} \tiny{(recenzento parašas)} \\ \hline
+		\textbf{Darbą recenzuoti gavau.}
+		\vspace{15pt}
+		\begin{tabular}{ l l }
+			\rule{3cm}{0.4pt} & \hrulefill \\[-10pt]
+			\tiny{(data)} & \tiny{(recenzento parašas)} \\
+		\end{tabular}
+		
+		\\ \hline
 		
 	\end{tabular}
+	\setlength{\parindent}{1cm}
+	
+	\setcounter{footnote}{0}
 
 	\pagebreak
 	\newpage
@@ -482,7 +517,9 @@
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\addtolength{\leftskip}{1cm}
-	\@title : \MakeLowercase\@vukfType / \@author ; mokslinis vadovas \@vukfSupervisor ; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] lap. : lent. -- Mašinr. -- Santr. angl. -- Bibliogr.: lap. \pageref{bibliographyStart}--\pageref{bibliographyEnd} (43 pavad.).\\
+	\@title : \MakeLowercase\@vukfType / \@author ; mokslinis vadovas \@vukfSupervisor ; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] lap. : lent. -- Mašinr. -- Santr. angl.
+	%-- Bibliogr.: lap. \pageref{bibliographyStart}--\pageref{bibliographyEnd} (43 pavad.).
+	\\
 	
 	\addtolength{\leftskip}{-1cm}
 	\setlength{\parindent}{0cm}
@@ -503,7 +540,9 @@
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\addtolength{\leftskip}{1cm}
-	\@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] p. : lent. -- Mašinr. -- Santr. angl. -- Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).\\
+	\@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] p. : lent. -- Mašinr. -- Santr. angl.
+	%-- Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).
+	\\
 
 	\addtolength{\leftskip}{-1cm}
 	\setlength{\parindent}{0cm}
