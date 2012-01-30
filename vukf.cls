@@ -39,13 +39,35 @@
 
 \LoadClass[12pt,a4paper,oneside]{article}
 \special{papersize=210mm,297mm}
-\usepackage[top=2cm, bottom=2cm, left=3cm, right=1cm, paper=a4paper, layout=a4paper]{geometry}
+
+% Conditionals
+\RequirePackage{ifxetex}
+\RequirePackage{ifpdf}
+
+% Geometry
+\ifxetex
+	\usepackage[xetex,top=2cm,bottom=2cm,left=3cm,right=1cm,paper=a4paper,layout=a4paper]{geometry}
+\else
+	\usepackage[top=2cm,bottom=2cm,left=3cm,right=1cm,paper=a4paper,layout=a4paper]{geometry}
+\fi
 
 \RequirePackage[lithuanian]{babel}
-\RequirePackage[utf8]{inputenc}
+
+% Encoding
+\ifxetex
+	% noop - UTF8 by default
+\else
+	\RequirePackage[utf8]{inputenc}
+\fi
+
+% graphicx
+\ifpdf
+	\usepackage[pdftex]{graphicx}
+\else
+	\usepackage[dvips]{graphicx}
+\fi
 
 % Times New Roman, kai naudojamas XeTeX
-\RequirePackage{ifxetex}
 \ifxetex
 	\RequirePackage{fontspec}
 	\defaultfontfeatures{Mapping=tex-text}	% Ilgas brūkšnys
@@ -82,7 +104,11 @@
 \RequirePackage{indentfirst}
 
 % "Subtiliai pagražina" rezultatą
-\RequirePackage{microtype}
+\ifxetex
+	% noop
+\else
+	\RequirePackage{microtype}
+\fi
 
 % Glosarijus
 \RequirePackage[toc,xindy]{glossaries}
@@ -93,7 +119,23 @@
 \RequirePackage{icomma}
 
 \RequirePackage{lastpage}
-\RequirePackage[breaklinks]{hyperref}
+
+% Links
+\ifpdf
+	\usepackage[pdftex,pdfborder=0,breaklinks,baseurl=http://,pdfpagemode=None,pdfstartview=XYZ,pdfstartpage=1]{hyperref}
+	\hypersetup{
+		pdfauthor   = \@vukfAuthorLastName, \@vukfAuthorFirstName,%
+		pdftitle    = \title,%
+		pdfkeywords = \vukfKeywords,%
+		pdfcreator  = \LaTeX,%
+		pdfproducer = \LaTeX}
+\else
+	\ifxetex
+		\usepackage[xetex,breaklinks]{hyperref}
+	\else
+		\usepackage[dvips,breaklinks]{hyperref}
+	\fi
+\fi
 
 % Puslapio numeris dešinėje
 \RequirePackage{fancyhdr}
