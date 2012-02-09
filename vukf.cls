@@ -51,7 +51,11 @@
 	\usepackage[top=2cm,bottom=2cm,left=3cm,right=1cm,paper=a4paper,layout=a4paper]{geometry}
 \fi
 
-\RequirePackage[lithuanian]{babel}
+% Language, quotes
+\RequirePackage[lithuanian,german]{babel}
+\RequirePackage{csquotes}
+\MakeOuterQuote{"}
+\selectlanguage{lithuanian}
 
 % Encoding
 \ifxetex
@@ -64,7 +68,7 @@
 \ifpdf
 	\usepackage[pdftex]{graphicx}
 \else
-	\usepackage[dvips]{graphicx}
+	\usepackage{graphicx}
 \fi
 
 % Times New Roman, kai naudojamas XeTeX
@@ -122,18 +126,12 @@
 
 % Links
 \ifpdf
-	\usepackage[pdftex,pdfborder=0,breaklinks,baseurl=http://,pdfpagemode=None,pdfstartview=XYZ,pdfstartpage=1]{hyperref}
-	\hypersetup{
-		pdfauthor   = \@vukfAuthorLastName, \@vukfAuthorFirstName,%
-		pdftitle    = \title,%
-		pdfkeywords = \vukfKeywords,%
-		pdfcreator  = \LaTeX,%
-		pdfproducer = \LaTeX}
+	\usepackage[pdftex,breaklinks,baseurl=http://]{hyperref}
 \else
 	\ifxetex
-		\usepackage[xetex,breaklinks]{hyperref}
+		\usepackage[xetex,breaklinks,baseurl=http://]{hyperref}
 	\else
-		\usepackage[dvips,breaklinks]{hyperref}
+		\usepackage[dvips,breaklinks,baseurl=http://]{hyperref}
 	\fi
 \fi
 
@@ -417,7 +415,7 @@
 		
 		\begin{tabular}{ l l }
 			\textbf{Bakalauro baigiamojo darbo kūrybinę dalį ginti} & \hrulefill \\[-10pt]
-			& \tiny{(įrašyti – leidžiu arba neleidžiu)} \\
+			& \tiny{(įrašyti - leidžiu arba neleidžiu)} \\
 		\end{tabular}
 		
 		\begin{tabular}{ l l }
@@ -559,7 +557,7 @@
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\addtolength{\leftskip}{1cm}
-	\@title : \MakeLowercase\@vukfType / \@author ; mokslinis vadovas \@vukfSupervisor ; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] lap. : lent. -- Mašinr. -- Santr. angl.
+	\@title : \MakeLowercase\@vukfType / \@author ; mokslinis vadovas \@vukfSupervisor ; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. - Vilnius, \the\year. - \pageref{LastPage}, [0] lap. : lent. - Mašinr. - Santr. angl.
 	%-- Bibliogr.: lap. \pageref{bibliographyStart}--\pageref{bibliographyEnd} (43 pavad.).
 	\\
 	
@@ -582,8 +580,8 @@
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\addtolength{\leftskip}{1cm}
-	\@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. -- Vilnius, \the\year. -- \pageref{LastPage}, [0] p. : lent. -- Mašinr. -- Santr. angl.
-	%-- Bibliogr.: p. \pageref{bibliographyStart}–\pageref{bibliographyEnd} (43 pavad.).
+	\@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. - Vilnius, \the\year. - \pageref{LastPage}, [0] p. : lent. - Mašinr. - Santr. angl.
+	%-- Bibliogr.: p. \pageref{bibliographyStart}-\pageref{bibliographyEnd} (43 pavad.).
 	\\
 
 	\addtolength{\leftskip}{-1cm}
