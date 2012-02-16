@@ -7,14 +7,15 @@ This is an **unofficial *LaTeX* template** for preparing Vilnius university Facu
 # Savybės
 
 * „Moka“ automatiškai pagaminti:
-	* **titulinį lapą**,
-	* **referato lapą**,
-	* **santraukas**,
-	* **turinį**,
-	* **bibliografinių nuorodų sąrašą**,
-	* **priedus**.
-* Formatuoja *BibTeX* **bibliografinių nuorodų sąrašą** (daugmaž) pagal reikalavimus.
-* Atitinka Komunikacijos fakulteto [**Rašto darbų metodinius nurodymus**][1]:
+	* titulinį lapą,
+	* referato lapą,
+	* santraukas,
+	* turinį,
+	* bibliografinių nuorodų sąrašą,
+	* priedus.
+* Formatuoja *BibTeX* bibliografinių nuorodų sąrašą (daugmaž) pagal reikalavimus.
+* Naudoja reikiamas kabutes (`„“`) ir brūkšnį (`–`).
+* Atitinka VU Komunikacijos fakulteto [Rašto darbų metodinius nurodymus][1]:
 	* teisingas šriftas,
 	* korektiškos antraštės,
 	* tarpai tarp eilučių,
@@ -26,11 +27,13 @@ This is an **unofficial *LaTeX* template** for preparing Vilnius university Facu
 
 - Įsidiegti *TeX* dokumentų rengimo programą.
   * Rekomenduojamas [TeX Live][2] paketas MS Windows / Linux sistemoms arba [MacTeX][3] paketas Mac OS X sistemai
-- Parsisiųstus failus `vukf.cls` (pats *LaTeX* šablonas) ir `vukfbibtex.bst` (*BibTeX* stilius bibliografinių nuorodų sąrašui) įkelti į tą patį katalogą, kuriame yra ir rengiamas darbas.
+- Parsisiųstus failus `vukf.cls` (šablonas) ir `vukfbibtex.bst` (*BibTeX* stilius bibliografinių nuorodų sąrašui) įkelti į tą patį katalogą, kuriame yra ir rengiamas darbas.
 
 # Kaip naudoti
 
-Žr. katalogą `pavyzdys/`. Jame patalpintas gal ne pats geriausias, bet *LaTeX*'u parašytas kursinis darbas.
+Rengiamo dokumento PDF'ą ruošti su *XeTeX*: `xelatex kursinis.tex`
+
+Pavyzdys patalpintas kataloge `pavyzdys/`. Jame rasite gal ne patį geriausią, bet su *LaTeX* (*XeTeX*) parengtą kursinį darbą.
 
 * `kursinis-piratines-radijo-stotys.tex` - pats kursinis darbas.
 * `kursinis-piratines-radijo-stotys-bibliografija.bib` - kursinio darbo bibliografiniai šaltiniai.
@@ -48,14 +51,12 @@ Nes:
 
 # Pastabos
 
-* Dokumento kūrimui naudoti *XeTeX* (nes būtinas *Times New Roman* šriftas).
-* „Ilgi“ lietuviški brūkšniai rašomi įterpiant du brūkšnius (`--`).
+* Dokumento kūrimui rekomenduojama naudoti *XeTeX* (nes būtinas *Times New Roman* šriftas).
+	* Veiks it su *LaTeX*, bet tuomet "įprasti" brūkšniai nebus automatiškai pakeičiami į ilgus "lietuviškus", taigi reikės naudoti ` -- `.
 * Kol kas *BibTeX* stilius „nemoka“ autoriaus pavardės pakeisti į didžiąsias raides (todėl teks rankomis).
 
 # Klaidos / FIXME / TODO
 
-* „Lietuviškos“ kabutės galėtų būti rašomos patogiau.
-	* Šiuo metu geriausia rašyti du kablelius (`,,`), dvi viengubas kabutes (`''`) ir galiausiai panaudoti *Find and Replace* ;-)
 * Baigti realizuoti *BibTeX* stilių.
 * Referato puslapyje nesuskaičiuojamas priedų puslapių skaičius.
 * Turinio kūrimas galėtų būti patobulintas (pirmo lygio skyrių pavadinimai didžiosiomis raidėmis, numerių lygiavimas ir kt.)

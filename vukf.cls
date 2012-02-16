@@ -57,6 +57,15 @@
 \MakeOuterQuote{"}
 \selectlanguage{lithuanian}
 
+% Dashes
+\ifxetex
+	\usepackage{xesearch}
+	\UndoBoundary{-}
+	\SearchList{dash}{--}{-}
+\else
+	\ClassWarning{vukf}{Please note that since you're using LaTeX and not XeTeX, the usual hyphen (-) won't be replaced with an en-dash (--) as required by the university requirements.}
+\fi
+
 % Encoding
 \ifxetex
 	% noop - UTF8 by default
