@@ -33,11 +33,13 @@ This is an **unofficial *LaTeX* template** for preparing Vilnius university Facu
 
 Rengiamo dokumento PDF'ą ruošti su *XeTeX*: `xelatex kursinis.tex`
 
-Pavyzdys patalpintas kataloge `pavyzdys/`. Jame rasite gal ne patį geriausią, bet su *LaTeX* (*XeTeX*) parengtą kursinį darbą.
+# Pavyzdys
 
-* `kursinis-piratines-radijo-stotys.tex` - pats kursinis darbas.
-* `kursinis-piratines-radijo-stotys-bibliografija.bib` - kursinio darbo bibliografiniai šaltiniai.
-* `kursinis-piratines-radijo-stotys.pdf` - kursinio darbo PDF, sugeneruotas naudojant šį šabloną.
+Pavyzdys yra patalpintas byloje `pavyzdys-kursinis.tex` - gal ne pats geriausias, bet su *LaTeX* (*XeTeX*) parengtas kursinis darbas.
+
+* `pavyzdys-kursinis.tex` - pats kursinis darbas.
+* `pavyzdys-kursinis-bibliografija.bib` - kursinio darbo bibliografiniai šaltiniai.
+* `pavyzdys-kursinis.pdf` - kursinio darbo PDF, sugeneruotas naudojant šį šabloną.
 
 # Kodėl ne *Word*'as?
 

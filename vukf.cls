@@ -59,7 +59,7 @@
 
 % Dashes
 \ifxetex
-	\usepackage{xesearch}
+	\RequirePackage{xesearch}
 	\UndoBoundary{-}
 	\SearchList{dash}{--}{-}
 \else
