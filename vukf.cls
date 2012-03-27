@@ -206,12 +206,32 @@
 \DeclareOption{bakalauro-baigiamojo-darbo-kurybine-dalis}{
 	\def\@vukfType{Bakalauro baigiamojo darbo kūrybinė dalis}
 	\def\@vukfTypeEn{Final bachelor degree work}
+	\def\@vukfCoverLetterTypeNominative{bakalauro baigiamojo darbo kūrybinė dalis}
+	\def\@vukfCoverLetterTypeGenitive{bakalauro baigiamojo darbo kūrybinės dalies}
+	\def\@vukfCoverLetterTypeNominativeCaps{Bakalauro baigiamojo darbo kūrybinė dalis}
+	\def\@vukfCoverLetterTypeAccusativeCaps{Bakalauro baigiamojo darbo kūrybinę dalį}
+	\def\@vukfCoverLetterPrepared{parengta}
+	\def\@vukfCoverLetterAll{visa}
+	\def\@vukfCoverLetterIts{jos}
+	\def\@vukfCoverLetterUsed{panaudota}
+	\def\@vukfCoverLetterToBeUsed{naudojama}
+	\def\@vukfCoverLetterRegistered{įregistruota}
 }
 
 % Bakalauro baigiamasis darbas
 \DeclareOption{bakalauro-baigiamasis-darbas}{
 	\def\@vukfType{Bakalauro baigiamasis darbas}
-	\def\@vukfTypeEn{Study}	% FIXME
+	\def\@vukfTypeEn{Bachelor thesis}
+	\def\@vukfCoverLetterTypeNominative{bakalauro baigiamasis darbas}
+	\def\@vukfCoverLetterTypeGenitive{bakalauro baigiamojo darbo}
+	\def\@vukfCoverLetterTypeNominativeCaps{Bakalauro baigiamasis darbas}
+	\def\@vukfCoverLetterTypeAccusativeCaps{Bakalauro baigiamąjį darbą}
+	\def\@vukfCoverLetterPrepared{parengtas}
+	\def\@vukfCoverLetterAll{visas}
+	\def\@vukfCoverLetterIts{jo}
+	\def\@vukfCoverLetterUsed{panaudotas}
+	\def\@vukfCoverLetterToBeUsed{naudojamas}
+	\def\@vukfCoverLetterRegistered{įregistruotas}
 }
 
 % Baigiamasis magistro darbas
@@ -400,49 +420,49 @@
 	\setlength{\parindent}{0cm}
 	\begin{tabular}{ | p{15cm} | }
 		\hline
-		\emph{Pildo bakalauro baigiamojo darbo kūrybinės dalies autorius} \\ \hline
+		\emph{Pildo~\@vukfCoverLetterTypeGenitive~autorius} \\ \hline
 		\@author \\[-10pt]
 		
-		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies autoriaus vardas, pavardė)} \\
+		\tiny{(\@vukfCoverLetterTypeGenitive~autoriaus vardas, pavardė)} \\
 		\\
 		\@title \\[-10pt]
-		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies pavadinimas lietuvių kalba)} \\
+		\tiny{(\@vukfCoverLetterTypeGenitive~pavadinimas lietuvių kalba)} \\
 		\\
 		\@vukfTitleEn \\[-10pt]
-		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies pavadinimas anglų kalba)} \\
+		\tiny{(\@vukfCoverLetterTypeGenitive~pavadinimas anglų kalba)} \\
 		\hline
 		
-		\textbf{Patvirtinu, kad bakalauro baigiamojo darbo kūrybinė dalis parengta savarankiškai, nepažeidžiant kitiems asmenims priklausančių autorių teisių, visas darbas ar jo dalis nebuvo panaudota kitose aukštosiose mokyklose.} \\
+		\textbf{Patvirtinu, kad~\@vukfCoverLetterTypeNominative~\@vukfCoverLetterPrepared~savarankiškai, nepažeidžiant kitiems asmenims priklausančių autorių teisių,~\@vukfCoverLetterAll~\@vukfCoverLetterTypeNominative~ar~\@vukfCoverLetterIts~dalis nebuvo~\@vukfCoverLetterUsed~kitose aukštosiose mokyklose.} \\
 		\hrulefill \\[-10pt]
-		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies autoriaus parašas)} \\ \hline
+		\tiny{(\@vukfCoverLetterTypeGenitive~autoriaus parašas)} \\ \hline
 		
-		\textbf{Sutinku, kad bakalauro baigiamojo darbo kūrybinė dalis būtų naudojama neatlygintinai 5 metus Vilniaus universiteto Komunikacijos fakulteto studijų procese.} \\
+		\textbf{Sutinku, kad~\@vukfCoverLetterTypeNominative~būtų~\@vukfCoverLetterToBeUsed~neatlygintinai 5 metus Vilniaus universiteto Komunikacijos fakulteto studijų procese.} \\
 		\hrulefill \\[-10pt]
-		\tiny{(bakalauro baigiamojo darbo kūrybinės dalies autoriaus parašas)} \\ \hline
+		\tiny{(\@vukfCoverLetterTypeGenitive~autoriaus parašas)} \\ \hline
 		
-		\emph{Pildo bakalauro baigiamojo darbo kūrybinės dalies vadovas} \\ \hline
+		\emph{Pildo~\@vukfCoverLetterTypeGenitive~vadovas} \\ \hline
 		
 		\begin{tabular}{ l l }
-			\textbf{Bakalauro baigiamojo darbo kūrybinę dalį ginti} & \hrulefill \\[-10pt]
+			\textbf{\@vukfCoverLetterTypeAccusativeCaps~ginti} & \hrulefill \\[-10pt]
 			& \tiny{(įrašyti - leidžiu arba neleidžiu)} \\
 		\end{tabular}
 		
 		\begin{tabular}{ l l }
 			\rule{3cm}{0.4pt} & \hrulefill \\[-10pt]
-			\tiny{(data)} & \tiny{(bakalauro baigiamojo darbo kūrybinės dalies vadovo parašas)} \\
+			\tiny{(data)} & \tiny{(\@vukfCoverLetterTypeGenitive~vadovo parašas)} \\
 		\end{tabular}
 		
 		\\ \hline
 		
-		\emph{Pildo instituto / katedros, kuruojančios studijų programą, specialistė} \\ \hline
+		\emph{Pildo instituto / katedros, kuruojančios studijų programą, reikalų tvarkytojas} \\ \hline
 		
-		\textbf{Bakalauro baigiamojo darbo kūrybinė dalis įregistruota} \\
+		\textbf{\@vukfCoverLetterTypeNominativeCaps~\@vukfCoverLetterRegistered} \\
 		\hrulefill \\[-10pt]
 		\tiny{(instituto / katedros, kuruojančios studijų programą, pavadinimas)} \\
 		
 		\begin{tabular}{ l l }
 			\rule{3cm}{0.4pt} & \hrulefill \\[-10pt]
-			\tiny{(data)} & \tiny{(instituto/  katedros specialistės parašas)} \\
+			\tiny{(data)} & \tiny{(instituto / katedros reikalų tvarkytojo parašas)} \\
 		\end{tabular}
 		
 		\\ \hline
