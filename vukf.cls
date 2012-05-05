@@ -510,6 +510,7 @@
 
 \RequirePackage[titles]{tocloft}
 \RequirePackage[overload]{textcase}
+\setcounter{tocdepth}{5}
 
 % change section headers and page numbers to normal instead of bold font
 \renewcommand{\cftsecfont}{%
