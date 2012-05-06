@@ -152,6 +152,28 @@
 \rfoot{\small\thepage}
 \pagestyle{fancy}
 
+% Suspausti sąrašai
+\newenvironment{itemize*}{
+	\begin{itemize}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{enumerate*}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\newenvironment{description*}{
+	\begin{description}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+}{\end{description}}
+
 % ---------------------
 
 %
@@ -317,7 +339,7 @@
 
 % Taškas po numerio
 \renewcommand*{\@seccntformat}[1]{%
-  \csname the#1\endcsname.\quad
+	\csname the#1\endcsname.\quad
 }
 
 % Section'as naujame puslapyje
@@ -361,7 +383,7 @@
 
 \renewcommand\maketitle{
 	\begin{titlepage}
-  
+
 		\begin{center}
 		{
 			Vilniaus universiteto \\Komunikacijos fakulteto \\\@vukfDivision\par
@@ -402,7 +424,7 @@
 		}
 		\end{center}
 
-	  	\vfil\null
+		\vfil\null
 	\end{titlepage}
 	\setcounter{footnote}{0}
 
