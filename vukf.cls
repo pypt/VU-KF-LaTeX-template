@@ -127,6 +127,9 @@
 \RequirePackage[toc,xindy]{glossaries}
 \makeglossaries
 
+% (Sub-)paragrafus irgi numeruoti
+\setcounter{secnumdepth}{5}
+
 % (LTPlius.sty) Kadangi skaičių trupmeninės dalys atskiriamos
 % kableliu, po jo standartiškai dedamas tarpelis nepageidaujamas
 \RequirePackage{icomma}
@@ -283,6 +286,9 @@
 % Autoriaus pavardė (pvz. "Valiukas")
 \newcommand{\vukfAuthorLastName}[1]{\def\@vukfAuthorLastName{#1}}
 
+% Autoriaus ID (pvz. "Va-192")
+\newcommand{\vukfAuthorID}[1]{\def\@vukfAuthorID{#1}}
+
 % Autoriaus aprašymas (pvz. "Žurnalistikos bakalauro studijų programos \\ I kurso I grupės studentas")
 \newcommand{\vukfAuthorDescription}[1]{\def\@vukfAuthorDescription{#1}}
 
@@ -352,15 +358,22 @@
 % Įvadas
 \newcommand{\vukfIntroduction}{
 	\phantomsection
-	\addcontentsline{toc}{section}{Įvadas}
-	\section*{Įvadas}
+	\addcontentsline{toc}{section}{ĮVADAS}
+	\section*{ĮVADAS}
 }
 
 % Išvados
 \newcommand{\vukfConclusion}{
 	\phantomsection
-	\addcontentsline{toc}{section}{Išvados}
-	\section*{Išvados}
+	\addcontentsline{toc}{section}{IŠVADOS}
+	\section*{IŠVADOS}
+}
+
+% Angliška santrauka
+\newcommand{\vukfEnSummary}{
+	\phantomsection
+	\addcontentsline{toc}{section}{SUMMARY}
+	\section*{SUMMARY}
 }
 
 % Priedai
@@ -609,13 +622,16 @@
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\addtolength{\leftskip}{1cm}
-	\@title : \MakeLowercase\@vukfType / \@author ; mokslinis vadovas \@vukfSupervisor ; Vilniaus universitetas. Komunikacijos fakultetas. \@vukfDivision. - Vilnius, \the\year. - \pageref{LastPage}, [0] lap. : lent. - Mašinr. - Santr. angl.
-	%-- Bibliogr.: lap. \pageref{bibliographyStart}--\pageref{bibliographyEnd} (43 pavad.).
+	\@vukfAuthorID~\@title~(\@vukfTitleEn)~:~\MakeLowercase\@vukfType~/~\@author~;~mokslinis vadovas~\@vukfSupervisor~; Vilniaus universitetas. Komunikacijos fakultetas.~\@vukfDivision. - Vilnius,~\the\year. - 55, [0] lap. : lent. - Mašinr. - Santr. angl. Bibliogr.: lap.~48-53~(65 pavad.).
+	\\
+	UDK \@vukfUDK
 	\\
 	
 	\addtolength{\leftskip}{-1cm}
 	\setlength{\parindent}{0cm}
-	\textbf{Reikšminiai žodžiai:} \@vukfKeywords.\\
+	\textbf{Reikšminiai žodžiai:}~\@vukfKeywords.\\
+	\textbf{Keywords:}~\@vukfKeywordsEn.\\
+
 	\setlength{\parindent}{1cm}
 }{
 	% After
@@ -632,8 +648,7 @@
 	% FIXME neįskaičiuojamas priedų lapų skaičius
 	% FIXME nesuskaičiuojamas bibliografinių nuorodų skaičius
 	\addtolength{\leftskip}{1cm}
-	\@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. - Vilnius, \the\year. - \pageref{LastPage}, [0] p. : lent. - Mašinr. - Santr. angl.
-	%-- Bibliogr.: p. \pageref{bibliographyStart}-\pageref{bibliographyEnd} (43 pavad.).
+	\@vukfAuthorID \@vukfTitleEn : \MakeLowercase\@vukfTypeEn / \@author ; research director \@vukfSupervisor ; Vilnius university. Faculty of communication. \@vukfDivisionEn. - Vilnius, \the\year. - \pageref{LastPage}, [0] p. : lent. - Mašinr. - Santr. angl. Bibliogr.: p. \pageref{bibliographyStart}-\pageref{bibliographyEnd} (65 pavad.).
 	\\
 
 	\addtolength{\leftskip}{-1cm}
@@ -645,53 +660,3 @@
 	\pagebreak
 	\newpage
 }
-
-
-% ---------------------
-
-%
-% Citatos
-%
-
-\let\orig@quote\quote
-\let\endorig@quote\endquote
-\renewenvironment*{quote}
-	{\begin{orig@quote}\begin{itshape}}
-	{\end{itshape}\end{orig@quote}}
-
-\let\old@quotation\quotation
-\let\endold@quotation\endquotation
-\renewenvironment*{quotation}
-	{\begin{old@quotation}\begin{itshape}}
-	{\end{itshape}\end{old@quotation}}
-
-% ---------------------
-
-%
-% Bibliografija
-%
-
-% (VU MIF) Literatūros sąrašą įtraukiame į turinį, nustatome jo stilių
-\let\oldbibliography\bibliography
-\renewcommand{\bibliography}[1]{%
-
-	\nocite{*}	% Spausdiname ir tekste nepaminėtus šaltinius (visą biblioteką)
-	
-	\renewcommand{\refname}{BIBLIOGRAFINIŲ NUORODŲ SĄRAŠAS}%
-	\cleardoublepage%
-	\addcontentsline{toc}{section}{Bibliografinių nuorodų sąrašas}%
-	\bibliographystyle{vukfbibtex}%
-
-	\label{bibliographyStart}%
-	\oldbibliography{#1}%
-	\label{bibliographyEnd}
-}
-
-% Nuorodų sąraše nebus laužtinių skliaustų
-\newcounter{numberOfBibliographyEntries}
-\makeatletter
-\renewcommand\@biblabel[1]{%
-	\addtocounter{numberOfBibliographyEntries}{1}
-	\hfill #1.%
-}
-\makeatother
